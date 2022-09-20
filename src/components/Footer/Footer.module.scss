@@ -1,0 +1,16 @@
+footer {
+  background-color: #e4e5e4;
+  font-family: sans-serif;
+  font-size: 1rem;
+
+  #leaves {
+    width: 6rem;
+    border-radius: 10px;
+    &:hover {
+      background-color: #d4d5e5;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
