@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import UserContextProvider from "../contexts/UserContext";
 
-import LoginPage from "./LoginPage";
+import LoginPage from "../pages/LoginPage";
 
 const App = () => {
   return (
