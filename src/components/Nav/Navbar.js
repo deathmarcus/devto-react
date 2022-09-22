@@ -21,7 +21,7 @@ const Navbar = () => {
     setLoggedIn(localStorage.getItem("token"));
     console.log("Logged in", loggedIn);
     if (loggedIn) {
-      const payload = user.token.split(".")[1];
+      const payload = loggedIn.split(".")[1];
       const userId = JSON.parse(atob(payload)).id;
       setUrlUserProfile(
         `https://devto-challenge-backend.vercel.app/users/${userId}`
@@ -33,7 +33,9 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className={`container d-flex align-items-center`}>
+      <div
+        className={`container d-flex align-items-center justify-content-around`}
+      >
         <div>
           <LogoAndSearchBar />
         </div>
@@ -41,7 +43,7 @@ const Navbar = () => {
         <Offcanvas />
       </div> */}
         <div>
-          <Buttons loggedIn={loggedIn} />
+          <Buttons loggedIn={loggedIn} urlUserProfile={urlUserProfile} />
         </div>
       </div>
     </div>

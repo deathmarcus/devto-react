@@ -4,6 +4,7 @@ import UserContextProvider from "../contexts/UserContext";
 import Nav from "./Nav";
 import CreateUserPage from "../pages/CreateUserPage";
 import LoginPage from "../pages/LoginPage";
+import Footer from "./Footer/Footer";
 
 const App = () => {
   return (
@@ -19,6 +20,9 @@ const App = () => {
             <Route path="/login" element={<LoginPage />}></Route>
             <Route path="/createUser" element={<CreateUserPage />}></Route>
           </Routes>
+        </div>
+        <div>
+          <Footer />
         </div>
       </UserContextProvider>
     </div>
