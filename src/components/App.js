@@ -9,15 +9,23 @@ import EditPostPage from "../pages/EditPostPage";
 
 const App = () => {
   return (
-    <UserContextProvider>
-      <Nav />
-      <Routes>
-        <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/createUser" element={<CreateUserPage />}></Route>
-        <Route path="/createPost" element={<CreatePostPage />}></Route>
-        <Route path="/editPost/:postId" element={<EditPostPage />}></Route>
-      </Routes>
-    </UserContextProvider>
+    <div>
+      <UserContextProvider>
+        <header>
+          <nav>
+            <Nav />
+          </nav>
+        </header>
+        <div>
+          <Routes>
+            <Route path="/login" element={<LoginPage />}></Route>
+            <Route path="/createUser" element={<CreateUserPage />}></Route>
+            <Route path="/createPost" element={<CreatePostPage />}></Route>
+            <Route path="/editPost/:postId" element={<EditPostPage />}></Route>
+          </Routes>
+        </div>
+      </UserContextProvider>
+    </div>
   );
 };
 
