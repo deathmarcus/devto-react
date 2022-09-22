@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
+import FormInputField from "../FormInputField/FormInputField";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -39,41 +40,28 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div class="card-body py-5">
-        <div class="mb-3 row">
-          <label htmlFor="email" class="col-sm-2 col-form-label">
-            Email
-          </label>
-          <div class="col-sm-10">
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="name@example.com"
-            />
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label htmlFor="password" class="col-sm-2 col-form-label">
-            Password
-          </label>
-          <div class="col-sm-10">
-            <input
-              type="password"
-              class="form-control"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-            />
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary" id="login">
-          Log In
-        </button>
-      </div>
+      <FormInputField
+        type="email"
+        class="form-control"
+        id="email"
+        value={formData.userEmail}
+        placeholder="name@example.com"
+        label="Email"
+        name="email"
+        onChange={handleChange}
+      />
+      <FormInputField
+        type="password"
+        class="form-control"
+        value={formData.password}
+        placeholder="Type your password"
+        label="Password"
+        name="password"
+        onChange={handleChange}
+      />
+      <button type="submit" class="btn btn-primary" id="login">
+        Log In
+      </button>
     </form>
   );
 };
