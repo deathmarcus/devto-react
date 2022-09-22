@@ -40,7 +40,6 @@ const CreatePostPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

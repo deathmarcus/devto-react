@@ -10,7 +10,6 @@ const CreateUserPage = () => {
             <CreateUserForm />
           </div>
         </div>
-        <Footer />
       </div>
     </div>
   );

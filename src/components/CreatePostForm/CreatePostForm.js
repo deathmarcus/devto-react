@@ -30,7 +30,7 @@ function CreatePostForm() {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-      postAuthor: "630d1284d2ca82f29cf5c252",
+      postAuthor: id,
     });
   };
 
@@ -118,7 +118,7 @@ function CreatePostForm() {
           />
           <button class="btn btn-light outside-button" children="Save Draft" />
           <button class="btn btn-light outside-button">
-            <img src={dotsIcon} height="20px"></img>
+            <img src={dotsIcon} height="20px" />
           </button>
 
           <button
