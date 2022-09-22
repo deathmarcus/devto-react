@@ -1,13 +1,14 @@
 import React from "react";
 import logo from "../assets/icons/logo.png";
+import styles from "./Navbar.module.scss";
 
 const LogoAndSearchBar = () => {
   return (
     <div>
-      <div className={`d-flex align-items-center`}>
+      <div className={`container d-flex align-items-center`}>
         <button
           id="offcanvas_btn"
-          className={`btn d-inline-block d-md-none navbar-toggler burguer-button`}
+          className={`btn d-inline-block d-md-none navbar-toggler ${styles.burguerButton}`}
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasExample"
@@ -15,7 +16,7 @@ const LogoAndSearchBar = () => {
         >
           <span className={`navbar-toggler-icon nav-span`}></span>
         </button>
-        <a className={`navbar-brand`} href="#" alt="logo">
+        <a className={styles.navbarBrand} href="#" alt="logo">
           <img src={logo} />
         </a>
 
@@ -23,16 +24,16 @@ const LogoAndSearchBar = () => {
           className={`collapse navbar-collapse d-md-flex`}
           id="navbarSupportedContent"
         >
-          <div className={`input-wrapper`}>
+          <div className={styles.inputWrapper}>
             <input
               type="search"
-              className={`input input-search`}
+              className={`${styles.input} input-search`}
               id="find-input"
               placeholder="Search..."
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`input-icon`}
+              className={styles.inputIcon}
               viewBox="0 0 20 20"
               fill="currentColor"
             >

@@ -7,13 +7,21 @@ import LoginPage from "../pages/LoginPage";
 
 const App = () => {
   return (
-    <UserContextProvider>
-      <Nav />
-      <Routes>
-        <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/createUser" element={<CreateUserPage />}></Route>
-      </Routes>
-    </UserContextProvider>
+    <div>
+      <UserContextProvider>
+        <header>
+          <nav>
+            <Nav />
+          </nav>
+        </header>
+        <div>
+          <Routes>
+            <Route path="/login" element={<LoginPage />}></Route>
+            <Route path="/createUser" element={<CreateUserPage />}></Route>
+          </Routes>
+        </div>
+      </UserContextProvider>
+    </div>
   );
 };
 

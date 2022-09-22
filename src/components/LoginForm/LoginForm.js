@@ -47,7 +47,7 @@ const LoginForm = () => {
         value={formData.userEmail}
         placeholder="name@example.com"
         label="Email"
-        name="userEmail"
+        name="email"
         onChange={handleChange}
       />
       <FormInputField
