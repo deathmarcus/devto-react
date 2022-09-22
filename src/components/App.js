@@ -5,6 +5,7 @@ import Nav from "./Nav";
 import CreateUserPage from "../pages/CreateUserPage";
 import LoginPage from "../pages/LoginPage";
 import CreatePostPage from "../pages/CreatePostPage";
+import Footer from "./Footer/Footer";
 import EditPostPage from "../pages/EditPostPage";
 
 const App = () => {
@@ -23,6 +24,9 @@ const App = () => {
             <Route path="/createPost" element={<CreatePostPage />}></Route>
             <Route path="/editPost/:postId" element={<EditPostPage />}></Route>
           </Routes>
+        </div>
+        <div>
+          <Footer />
         </div>
       </UserContextProvider>
     </div>
