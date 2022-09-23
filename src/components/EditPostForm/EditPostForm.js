@@ -89,64 +89,72 @@ const EditPostForm = ({ data, postURL }) => {
   };
 
   return (
-    <form
-      class="card col-12 col-md-9"
-      id="createpost_main"
-      onSubmit={handleSubmit}
-    >
-      <div>
-        <FormInputField
-          type="text"
-          class="form-control"
-          value={formData.postImage}
-          placeholder="Paste here the url of your post cover"
-          label="Post Cover Image"
-          name="postImage"
-          onChange={handleChange}
-        />
-        <FormInputField
-          type="textarea"
-          class="form-control"
-          value={formData.postTitle}
-          placeholder="New post title here..."
-          label="Post Title"
-          name="postTitle"
-          onChange={handleChange}
-          rows="3"
-        />
-        <TagField
-          defaultValue={post.postTags}
-          onChange={handleTagify}
-          name="postTags"
-          value={tagList.postTagList}
-          label="postTags"
-        />
-        <QuillEditor
-          name="postBody"
-          value={formData.postBody}
-          placeholder="Write your post content here.."
-          onChange={handleQuill}
-          defaultValue={formData.postBody}
-        />
-        <div class="outside-buttons py-3">
-          <button
-            class=" btn btn-primary outside-button"
-            id="save_btn"
-            children="Publish"
+    <>
+      <form
+        class="card col-12 col-md-9"
+        id="createpost_main"
+        onSubmit={handleSubmit}
+      >
+        <div>
+          <FormInputField
+            type="text"
+            class="form-control"
+            value={formData.postImage}
+            placeholder="Paste here the url of your post cover"
+            label="Post Cover Image"
+            name="postImage"
+            onChange={handleChange}
           />
-          <button class="btn btn-light outside-button" children="Save Draft" />
-          <button class="btn btn-light outside-button">
-            <img src={dotsIcon} height="20px" />
-          </button>
+          <FormInputField
+            type="textarea"
+            class="form-control"
+            value={formData.postTitle}
+            placeholder="New post title here..."
+            label="Post Title"
+            name="postTitle"
+            onChange={handleChange}
+            rows="3"
+          />
+          <TagField
+            defaultValue={post.postTags}
+            onChange={handleTagify}
+            name="postTags"
+            value={tagList.postTagList}
+            label="postTags"
+          />
+          <QuillEditor
+            name="postBody"
+            value={formData.postBody}
+            placeholder="Write your post content here.."
+            onChange={handleQuill}
+            defaultValue={formData.postBody}
+          />
+          <div class="outside-buttons py-3">
+            <button
+              class=" btn btn-primary outside-button"
+              id="save_btn"
+              children="Publish"
+              type="submit"
+            />
+            <button
+              class="btn btn-light outside-button"
+              children="Save Draft"
+            />
+            <button class="btn btn-light outside-button">
+              <img src={dotsIcon} height="20px" />
+            </button>
 
-          <button
-            class="btn btn-light outside-button"
-            children="Revert new changes"
-          />
-          {/* <button onClick={useDelete(post)}>Delete</button> */}
+            <button
+              class="btn btn-light outside-button"
+              children="Revert new changes"
+            />
+            <button type="button" onClick={useDelete()}>
+              Delete
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </>
   );
 };
 
