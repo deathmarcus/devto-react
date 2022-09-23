@@ -4,7 +4,7 @@ import styles from "./Navbar.module.scss";
 
 const LogoAndSearchBar = () => {
   return (
-    <div>
+    <>
       <div className={`container d-flex align-items-center`}>
         <button
           id="offcanvas_btn"
@@ -46,7 +46,7 @@ const LogoAndSearchBar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

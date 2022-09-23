@@ -5,10 +5,11 @@ import Offcanvas from "./Offcanvas";
 import LogoAndSearchBar from "./LogoAndSearchBar";
 import Buttons from "./Buttons";
 import styles from "./Navbar.module.scss";
+import useFetch from "../../hooks/useFetch";
 
 const Navbar = () => {
   const { user, setUser } = useContext(UserContext);
-  const [urlUserProfile, setUrlUserProfile] = useState("");
+  const [url, setUrl] = useState("");
   const [loggedIn, setLoggedIn] = useState(localStorage.getItem("token"));
 
   const navigate = useNavigate();
@@ -17,35 +18,38 @@ const Navbar = () => {
     navigate("/LoginForm");
   };
 
+  const { data, loading, error } = useFetch(url);
+  console.log("Aqui la data:", data);
+  if (error) console.log(error);
+
   useEffect(() => {
     setLoggedIn(localStorage.getItem("token"));
     console.log("Logged in", loggedIn);
     if (loggedIn) {
       const payload = loggedIn.split(".")[1];
       const userId = JSON.parse(atob(payload)).id;
-      setUrlUserProfile(
-        `https://devto-challenge-backend.vercel.app/users/${userId}`
-      );
-
-      console.log("urlUserProfile", urlUserProfile);
+      setUrl(`https://devto-challenge-backend.vercel.app/users/${userId}`);
     }
   }, [user]);
 
   return (
     <div>
-      <div
-        className={`container d-flex align-items-center justify-content-around`}
-      >
-        <div>
-          <LogoAndSearchBar />
-        </div>
-        {/* <div>
+      {loading && <div>Loading...</div>}
+      {data && (
+        <div
+          className={`container d-flex align-items-center justify-content-around`}
+        >
+          <div>
+            <LogoAndSearchBar />
+          </div>
+          {/* <div>
         <Offcanvas />
       </div> */}
-        <div>
-          <Buttons loggedIn={loggedIn} urlUserProfile={urlUserProfile} />
+          <div className={`container d-flex align-items-center`}>
+            <Buttons loggedIn={loggedIn} data={data} />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

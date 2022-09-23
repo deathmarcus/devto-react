@@ -1,43 +1,36 @@
 import React, { useEffect, useState } from "react";
 import Post from "./Post";
+import styles from "../Home/Home.module.scss";
 
-const Home = () => {
+const Home = (data) => {
   const [posts, setPosts] = useState({});
   const [error, setError] = useState(false);
-
-  const fetchData = () => {
-    const UrlPosts = "https://devto-challenge-backend.vercel.app/posts/";
-    fetch(UrlPosts)
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        let arr = res.data.posts;
-        arr.reverse();
-        setPosts(arr);
-        console.log("posts", posts);
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
-  };
   useEffect(() => {
-    fetchData();
+    setPosts(data.data.data.posts);
   }, []);
-  console.log("posts afuera de useEffect", posts);
 
   if (!posts.length) {
     return <div>Cargando...</div>;
   }
   return (
     <div>
-      <div className={`row main_section`}>
-        <div className={`container col-12`}>
-          <div className={`col-12 card-p1-global y-2`} id="main_posts_cards">
-            <Post posts={posts} />
-          </div>
-        </div>
-      </div>
+      {posts.map((post, index) => {
+        return (
+          <>
+            <div className={`row`}>
+              <div className={`container col-12`}>
+                <div
+                  className={`col-12 ${styles.cardP1Global} y-2`}
+                  key={post.id}
+                  id="main_posts_cards"
+                >
+                  <Post post={post} showCover={index === 0} />
+                </div>
+              </div>
+            </div>
+          </>
+        );
+      })}
     </div>
   );
 };

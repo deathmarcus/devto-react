@@ -7,7 +7,7 @@ import LoginPage from "../pages/LoginPage";
 import CreatePostPage from "../pages/CreatePostPage";
 import Footer from "./Footer/Footer";
 import EditPostPage from "../pages/EditPostPage";
-import HomePage from "./Home/Home";
+import HomePage from "../pages/HomePage";
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
             <Nav />
           </nav>
         </header>
-        <div>
+        <>
           <Routes>
             <Route path="/login" element={<LoginPage />}></Route>
             <Route path="/createUser" element={<CreateUserPage />}></Route>
@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/editPost/:postId" element={<EditPostPage />}></Route>
             <Route path="/" element={<HomePage />}></Route>
           </Routes>
-        </div>
+        </>
         <div>
           <Footer />
         </div>

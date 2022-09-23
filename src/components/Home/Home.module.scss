@@ -3,7 +3,7 @@
     display: none;
   }
 }
-.nav-pills {
+.navPills {
   border: none;
   background-color: #f5f5f5;
   & li {
@@ -23,15 +23,15 @@
     color: #000000;
   }
 }
-.nav-link {
+.navLink {
   & button {
     color: #000000;
     background: #f5f5f5;
   }
 }
-.aside-izq {
+.asideIzq {
   display: inline-flexbox;
-  margin: auto;
+
   li {
     display: block;
     text-decoration: none;
@@ -57,15 +57,15 @@ body {
   background-color: #f5f5f5 !important;
 }
 
-.main-wrapper {
+.mainWrapper {
   margin: auto;
   max-width: 1250px;
-  padding-top: 100px;
+  padding-top: 30px;
 }
-// .section_main_cards {
+// .sectionMainCards {
 //     gap: 20px;
 // }
-.aside-izq {
+.asideIzq {
   color: black;
 }
 .p1 {
@@ -86,7 +86,8 @@ body {
   }
 }
 
-.list-group-item {
+.listGroupItem {
+  list-style-type: none;
   border: none !important;
   text-decoration: none;
   color: #191919 !important;
@@ -95,7 +96,7 @@ body {
     text-decoration: none;
   }
 }
-.border-card {
+.borderCard {
   border: #e7e6e6 solid 1px;
   border-radius: 0.5rem;
 }
@@ -162,7 +163,7 @@ body {
   text-decoration-color: #404040 !important;
 }
 
-.story-reference-p1 {
+.storyReferenceP1 {
   font-size: 14px;
   line-height: 21px;
   a {
@@ -173,7 +174,7 @@ body {
     }
   }
 }
-.post-tags {
+.postTags {
   &:hover {
     color: #404040;
     border: #bdbdbd solid 1px;
@@ -230,24 +231,24 @@ body {
   margin-right: 5px;
 }
 
-.l-p1 {
+.lP1 {
   margin-left: auto;
 }
 
-.r-p1-card {
+.rP1Card {
   background-color: #fafafa;
   border: none;
   margin-bottom: 10px;
 }
 
-.r-p1-card-text {
+.rP1CardText {
   line-height: 1.5;
   font-style: normal;
   letter-spacing: 0.5px;
   border-bottom: solid 0.5px #f5f5f5;
 }
 
-.r-p1-card-text-heading {
+.rP1CardTextHeading {
   font-family: "Segoe UI Bold";
   line-height: 1.5;
   letter-spacing: 0.5px;
@@ -255,32 +256,32 @@ body {
   border-bottom: solid 0.5px #f5f5f5;
 }
 
-.r-p1 {
+.rP1 {
   display: none;
 }
 
 @media only screen and (max-width: 768px) {
-  .r-p1 {
+  .rP1 {
     display: none;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .r-p1 {
+  .rP1 {
     display: block;
   }
 }
 
-.card-p1-global {
+.cardP1Global {
   a {
     text-decoration: none;
   }
 }
-.link-aside {
+.linkAside {
   text-decoration: none;
   font-family: "Segoe UI Bold";
 }
-.card-p1-global {
+.cardP1Global {
   a {
     text-decoration: none;
   }
