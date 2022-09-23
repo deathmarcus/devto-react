@@ -1,0 +1,303 @@
+@media only screen and (max-width: 425px) {
+  .aside-izq {
+    display: none;
+  }
+}
+.nav-pills {
+  border: none;
+  background-color: #f5f5f5;
+  & li {
+    display: block;
+    text-decoration: none;
+    padding: 8px;
+  }
+  & a {
+    text-decoration: none;
+    color: #000000;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  & button {
+    color: #000000;
+  }
+}
+.nav-link {
+  & button {
+    color: #000000;
+    background: #f5f5f5;
+  }
+}
+.aside-izq {
+  display: inline-flexbox;
+  margin: auto;
+  li {
+    display: block;
+    text-decoration: none;
+    padding: 8px;
+    &:hover {
+      background-color: rgb(234, 236, 252) !important;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: #000000;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+body {
+  width: 100%;
+  font-family: "Segoe UI Regular" !important;
+  background-color: #f5f5f5 !important;
+}
+
+.main-wrapper {
+  margin: auto;
+  max-width: 1250px;
+  padding-top: 100px;
+}
+// .section_main_cards {
+//     gap: 20px;
+// }
+.aside-izq {
+  color: black;
+}
+.p1 {
+  max-width: 100%;
+}
+.indCard {
+  background-color: #fafafa;
+  border: none;
+  margin-bottom: 10px;
+}
+.cardP1Global {
+  border-radius: 0.5rem;
+  & img {
+    max-height: 273px;
+    object-fit: fill;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.list-group-item {
+  border: none !important;
+  text-decoration: none;
+  color: #191919 !important;
+  a {
+    color: #191919 !important;
+    text-decoration: none;
+  }
+}
+.border-card {
+  border: #e7e6e6 solid 1px;
+  border-radius: 0.5rem;
+}
+
+.userCardP1 {
+  height: 50px;
+  overflow: hidden;
+  padding-top: 8px;
+
+  & img {
+    margin-left: 10px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+  }
+}
+
+.userP1 {
+  padding-bottom: 0;
+  padding-top: 10px;
+  border-bottom: none;
+}
+
+.userStoryTextP1 {
+  align-self: baseline;
+  margin-left: 0.5rem !important;
+}
+
+.storyUsernameP1 {
+  font-family: "Segoe UI";
+  font-weight: 500;
+}
+
+.storyPostdateP1 {
+  font-size: 12px;
+}
+
+.storyTextP1 {
+  border-bottom: none;
+  padding-top: 3px;
+  padding-left: 70px !important;
+}
+.storyTitleP11 {
+  font-family: "Segoe UI Bold", Tahoma, Geneva, Verdana, sans-serif;
+
+  font-size: 30px;
+  line-height: 37.5px;
+  a {
+    color: #404040 !important;
+    text-decoration: none !important;
+  }
+
+  li {
+    color: #404040 !important;
+    text-decoration: none !important;
+  }
+}
+
+.storyTitleP1 {
+  font-family: "Segoe UI Bold", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 30px;
+  text-decoration-color: #404040 !important;
+}
+
+.story-reference-p1 {
+  font-size: 14px;
+  line-height: 21px;
+  a {
+    color: #404040;
+    text-decoration: none;
+    &:hover {
+      color: #404040;
+    }
+  }
+}
+.post-tags {
+  &:hover {
+    color: #404040;
+    border: #bdbdbd solid 1px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+  }
+  padding: 2px;
+}
+
+.propertiesIconP1 {
+  width: 20px;
+  height: 20px;
+}
+
+.cardBottomP1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  margin-left: 46px;
+  align-items: center;
+}
+
+.bottomRightP1 {
+  display: inline-block;
+  padding-right: 4px;
+}
+
+.btnSm {
+  width: 54px;
+  height: 32px;
+  padding: none;
+  border: none;
+  border-color: none;
+  border-radius: 5px;
+  background-color: #bdbdbd;
+  & button {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.bottomLeftP1 {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #404040;
+  align-items: center;
+}
+
+.storyReadTimeP1 {
+  font-size: 11px;
+  line-height: 14px;
+  margin-right: 5px;
+}
+
+.l-p1 {
+  margin-left: auto;
+}
+
+.r-p1-card {
+  background-color: #fafafa;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.r-p1-card-text {
+  line-height: 1.5;
+  font-style: normal;
+  letter-spacing: 0.5px;
+  border-bottom: solid 0.5px #f5f5f5;
+}
+
+.r-p1-card-text-heading {
+  font-family: "Segoe UI Bold";
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  border-bottom: solid 0.5px #f5f5f5;
+}
+
+.r-p1 {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .r-p1 {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .r-p1 {
+    display: block;
+  }
+}
+
+.card-p1-global {
+  a {
+    text-decoration: none;
+  }
+}
+.link-aside {
+  text-decoration: none;
+  font-family: "Segoe UI Bold";
+}
+.card-p1-global {
+  a {
+    text-decoration: none;
+  }
+}
+footer {
+  background-color: #e4e5e4;
+  font-family: sans-serif;
+  font-size: 1rem;
+
+  #leaves {
+    width: 6rem;
+    border-radius: 10px;
+    &:hover {
+      background-color: #d4d5e5;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}

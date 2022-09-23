@@ -7,6 +7,7 @@ import LoginPage from "../pages/LoginPage";
 import CreatePostPage from "../pages/CreatePostPage";
 import Footer from "./Footer/Footer";
 import EditPostPage from "../pages/EditPostPage";
+import HomePage from "./Home/Home";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/createUser" element={<CreateUserPage />}></Route>
             <Route path="/createPost" element={<CreatePostPage />}></Route>
             <Route path="/editPost/:postId" element={<EditPostPage />}></Route>
+            <Route path="/" element={<HomePage />}></Route>
           </Routes>
         </div>
         <div>
