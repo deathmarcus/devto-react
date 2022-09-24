@@ -4,13 +4,12 @@ import CreateUserForm from "../components/CreateUserForm/CreateUserForm";
 const CreateUserPage = () => {
   return (
     <div className="mainWrapper">
-      <div class="container col-12">
-        <div class="row justify-content-center">
-          <div class="card justify-content-center col-8">
+      <div className="container col-12">
+        <div className="row justify-content-center">
+          <div className="card justify-content-center col-8">
             <CreateUserForm />
           </div>
         </div>
-        <Footer />
       </div>
     </div>
   );

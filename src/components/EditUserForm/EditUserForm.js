@@ -4,6 +4,10 @@ import { UserContext } from "../../contexts/UserContext";
 import FormInputField from "../FormInputField/FormInputField"; //PRUEBA DE COMPONENTE REUTILIZABLE
 // import FormTextInput from "../FormTextInput";
 
+const token = localStorage.getItem("token" || "");
+const payload = token.split(".")[1];
+const id = JSON.parse(atob(payload)).id;
+
 function isEmailValid(email) {
   const emailRegexp = new RegExp(
     /^[a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1}([a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1})*[a-zA-Z0-9]@[a-zA-Z0-9][-\.]{0,1}([a-zA-Z][-\.]{0,1})*[a-zA-Z0-9]\.[a-zA-Z0-9]{1,}([\.\-]{0,1}[a-zA-Z]){0,}[a-zA-Z0-9]{0,}$/i
@@ -13,7 +17,7 @@ function isEmailValid(email) {
 
 const url = "https://devto-challenge-backend.vercel.app/users";
 
-const CreateUserForm = () => {
+const EditUserForm = () => {
   const [formData, setFormData] = useState({
     userEmail: "",
     password: "",
@@ -131,4 +135,4 @@ const CreateUserForm = () => {
   );
 };
 
-export default CreateUserForm;
+export default EditUserForm;

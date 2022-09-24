@@ -7,20 +7,42 @@ const FormInputField = ({
   placeholder,
   type,
   onChange,
-}) => (
-  <div class="mb-3 row">
-    {label && <label htmlFor="input-field">{label}</label>}
-    <div class="col-sm-10">
-      <input
-        type={type}
-        value={value}
-        name={name}
-        className="form-control"
-        placeholder={placeholder}
-        onChange={onChange}
-      />
-    </div>
-  </div>
-);
+  rows,
+}) => {
+  const inputType = type;
+  if (inputType == "textarea") {
+    return (
+      <div className="mb-3 row">
+        {label && <label htmlFor="input-field">{label}</label>}
+        <div className="col-sm-10">
+          <textarea
+            value={value}
+            name={name}
+            className="form-control"
+            placeholder={placeholder}
+            onChange={onChange}
+            rows={rows}
+          />
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="mb-3 row">
+        {label && <label htmlFor="input-field">{label}</label>}
+        <div className="col-sm-10">
+          <input
+            type={type}
+            value={value}
+            name={name}
+            className="form-control"
+            placeholder={placeholder}
+            onChange={onChange}
+          />
+        </div>
+      </div>
+    );
+  }
+};
 
 export default FormInputField;
