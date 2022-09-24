@@ -6,13 +6,13 @@ import QuillEditor from "../QuillEditor/QuillEditor";
 import TagField from "../TagField/TagField";
 import dotsIcon from "../assets/images/dotsbutton.png";
 
-const token = localStorage.getItem("token" || "");
-const payload = token.split(".")[1];
-const id = JSON.parse(atob(payload)).id;
-
 const URL = "https://devto-challenge-backend.vercel.app/posts";
 
 function CreatePostForm() {
+  const token = localStorage.getItem("token") || "";
+  const payload = token.split(".")[1];
+  const id = JSON.parse(atob(payload)).id;
+
   const [formData, setFormData] = useState({
     postAuthor: "",
     postImage: "",
