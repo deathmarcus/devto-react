@@ -1,0 +1,32 @@
+.asideDetailsRight {
+  .card {
+    position: relative;
+    border-radius: 10px;
+    background-color: transparent;
+    .topcolor {
+      background-color: #0b4442;
+      height: 32px;
+      border-top: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .cardName {
+      position: absolute;
+      top: 18px;
+    }
+    .imgUser {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+
+    .cardBody {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      p {
+        font-size: 14px;
+        color: #404040;
+      }
+    }
+  }
+}
