@@ -33,21 +33,10 @@ const EditPostForm = ({ data, postURL }) => {
       [e.target.name]: e.target.value,
       postAuthor: id,
     });
-    console.log("HC:", {
-      ...formData,
-      [e.target.name]: e.target.value,
-      postAuthor: id,
-    });
   };
 
   const handleQuill = (e) => {
     setFormData({
-      ...formData,
-      postBody: e,
-      postTimeToRead: Math.ceil(e.length / 150),
-    });
-
-    console.log("HQ:", {
       ...formData,
       postBody: e,
       postTimeToRead: Math.ceil(e.length / 150),
@@ -64,8 +53,6 @@ const EditPostForm = ({ data, postURL }) => {
     e.preventDefault();
     console.log("Submit en camino");
     const data = { ...formData, ...tagList };
-    console.log("data submit:", data);
-
     const response = await fetch(postURL, {
       method: "PATCH",
       headers: {
@@ -74,10 +61,7 @@ const EditPostForm = ({ data, postURL }) => {
       },
       body: JSON.stringify(data),
     });
-    console.log("response:", response);
-
     const jsonData = await response.json();
-
     // No fue exitoso, no estas autorizado
     if (!jsonData.success) {
       alert(jsonData.error);
@@ -100,9 +84,7 @@ const EditPostForm = ({ data, postURL }) => {
       },
     });
     console.log("response:", response);
-
     const jsonData = await response.json();
-
     // No fue exitoso, no estas autorizado
     if (!jsonData.success) {
       alert(jsonData.error);
