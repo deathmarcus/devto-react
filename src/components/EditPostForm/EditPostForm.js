@@ -90,8 +90,28 @@ const EditPostForm = ({ data, postURL }) => {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    console.log("borrando");
-    // const { data, loading, error } = useDelete(url, token);
+    console.log("Delete en camino");
+
+    const response = await fetch(postURL, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log("response:", response);
+
+    const jsonData = await response.json();
+
+    // No fue exitoso, no estas autorizado
+    if (!jsonData.success) {
+      alert(jsonData.error);
+    } else {
+      console.log("Delete Exitoso");
+      // Navegar
+      alert("Post Succesfully Deleted");
+      navigate("/index");
+    }
   };
 
   return (

@@ -1,30 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, setStatus } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-export default function useFetch(url, token) {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+const useDelete = async (postURL, token) => {
+  const navigate = useNavigate();
+  console.log("ejecutando delete");
+  console.log("Delete en camino");
+  const response = await fetch(postURL, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
-  useEffect(() => {
-    (async function () {
-      try {
-        setLoading(true);
-        const response = await axios.delete(url, {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        });
+  const jsonData = await response.json();
 
-        setData(response.data);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  }, [url]);
+  // No fue exitoso, no estas autorizado
+  if (!jsonData.success) {
+    alert(jsonData.error);
+  } else {
+    // Navegar
+    alert("Post Succesfully Deleted");
+    navigate("/index");
+  }
+};
 
-  return { data, error, loading };
-}
+export default useDelete;
