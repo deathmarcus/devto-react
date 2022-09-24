@@ -1,56 +1,73 @@
 import React from "react";
+import heart from "../assets/images/SVG/heart.png"
+import unicorn from "../assets/icons/SVG/unicorn.png"
 
-const LeftAsideDetail = () => {
+const LeftAsideDetail = ({posts}) => {
   return (
-    <div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        role="img"
-        aria-hidden="true"
-        class="crayons-icon"
-      >
-        <path d="M21.179 12.794l.013.014L12 22l-9.192-9.192.013-.014A6.5 6.5 0 0112 3.64a6.5 6.5 0 019.179 9.154zM4.575 5.383a4.5 4.5 0 000 6.364L12 19.172l7.425-7.425a4.5 4.5 0 10-6.364-6.364L8.818 9.626 7.404 8.21l3.162-3.162a4.5 4.5 0 00-5.99.334l-.001.001z"></path>
-      </svg>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        role="img"
-        aria-hidden="true"
-        class="crayons-icon"
-      >
-        <path d="M5.645 8.013c.013-.265-.261-.323-.4-.183-1.16 1.17-1.822 3.865-.344 7.32.294.961 1.938 3.19.84 6.131l-.003.006c-.094.255.206.404.366.263 1.395-1.226 1.933-3.593 1.1-6.375-.488-1.657-1.955-4.226-1.559-7.162zm-3.22 2.738c.05-.137-.124-.417-.326-.225-.939.893-1.316 2.863-.976 4.605.547 2.878 2.374 3.526 2.066 6.629-.028.102.176.38.348.154 1.546-2.033.409-4.453-.241-6.006-1.005-2.386-1.087-4.118-.871-5.157zM22.2 3.543l-8.579 3.68c-.332-.343-.615-.63-.76-.773-.527-.517.313-4.224-.409-4.439-.933-.277-5.042 4.624-4.696 7.953.224 2.735 2.193 4.89 1.72 8.412 3.446-.644 4.841 1.697 5.83 2.45 1.752 1.335 5.155-.551 3.807-3.582-.193-.435-2.05-4.732-2.931-6.775l6.619-5.94c.486-.44-.003-1.242-.601-.986zm-9.418 9.535a.828.828 0 01-.74-.9.825.825 0 01.81-.76c.479 0 .85.42.81.903a.824.824 0 01-.88.757z"></path>
-      </svg>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        role="img"
-        aria-hidden="true"
-        class="crayons-icon"
-      >
-        <path d="M5 2h14a1 1 0 011 1v19.143a.5.5 0 01-.766.424L12 18.03l-7.234 4.536A.5.5 0 014 22.143V3a1 1 0 011-1zm13 2H6v15.432l6-3.761 6 3.761V4z"></path>
-      </svg>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        role="img"
-        aria-labelledby="a4q319cowg2jl1koz1jwtsaeg6o7kl2j"
-        aria-hidden="true"
-        class="crayons-icon dropdown-icon"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M7 12a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0zm5 2a2 2 0 100-4 2 2 0 000 4z"></path>
-      </svg>
-    </div>
+    <div class="d-flex flex-row col-8 flex-lg-column left-aside-icon-container  col-lg-auto justify-content-evenly py-2" id="icongroup-container">
+
+      <div class=" d-flex flex-lg-column col-2  col-lg-1 justify-content-between" id="icon-counter-container">
+          <div class="icon-container" id="like-heart">
+              <input type="checkbox" id="aside-icon-checkboxheart" class="checkboxhider" />
+              <label for="aside-icon-checkboxheart" class="checkedlabel" id="checkboxheaartlabel" />
+                <img src={heart} alt="" class="aside-icon-default" />
+                <img src="./assets/images/SVG/hearthover.png" alt="" class="aside-icon-hover" />
+                <img src="./assets/images/SVG/heartcheked.png" alt="" class="aside-icon-cheked" id="heart" />
+          </div>
+          <div class="counter-container d-flex align-items-center justify-content-center">
+                  <span>${posts?.postLikesCount}</span>
+          </div>
+      </div>
+      <div class=" d-flex flex-lg-column col-2  col-lg-1 justify-content-between" id="icon-counter-container">
+          <div class="icon-container" id="unicorn-click">
+              <input type="checkbox" id="aside-icon-checkboxunicorn" class="checkboxhider" />
+              <label for="aside-icon-checkboxunicorn" class="checkedlabel" id="checkboxheaartlabel" />
+                <img src={unicorn} alt="" class="aside-icon-default" />
+                <img src="./assets/images/SVG/unicornhover.png" alt="" class="aside-icon-hover" />
+                <img src="./assets/images/SVG/unicorncheked.png" alt="" class="aside-icon-cheked" id="unicorn" />
+          </div>
+          <div class="counter-container d-flex align-items-center justify-content-center">
+              <span>${posts?.postUnicornCount}</span>
+          </div>
+      </div>
+      <div class=" d-flex flex-lg-column col-2 justify-content-between col-lg-1" id="icon-counter-container">
+          <div class="icon-container" id="save-flag">
+              <input type="checkbox" id="aside-icon-checkboxsave" class="checkboxhider" />
+              <label for="aside-icon-checkboxsave" class="checkedlabel" id="checkboxheaartlabel" />
+                <img src="./assets/images/SVG/save.png" alt="" class="aside-icon-default" />
+                <img src="./assets/images/SVG/savehover.png" alt="" class="aside-icon-hover" />
+                <img src="./assets/images/SVG/savercheked.png" alt="" class="aside-icon-cheked" id="save" />
+          </div>
+          <div class="counter-container d-flex align-items-center justify-content-center">
+              <span>${posts?.postSavedCount}</span>
+          </div>
+  
+      </div>
+      <div class=" d-flex flex-lg-column col-2 justify-content-between col-lg-1" id="icon-counter-container">
+          <div class="icon-container">
+              <input type="checkbox" id="aside-icon-checkboxdots" class="checkboxhider" />
+              <label for="aside-icon-checkboxdots" class="checkedlabel" />
+              <img src="./assets/images/SVG/dots.png" alt="" class="aside-icon-default" />
+              <img src="./assets/images/SVG/dotshover2.png" alt="" class="aside-icon-hover" />
+              <img src="./assets/images/SVG/dotshover2.png" alt="" class="aside-icon-cheked" id="dots" />
+              <div class="pop-menu-container">
+                  <ul class="menu-list p-1 m-0 d-flex flex-column" >
+                      <li id="list-header"><a class="dropdown-item" href="#"><b>Copylink</b></a></li>
+                      <li id="list-item"><a class="dropdown-item" href="#">Share to Twitter</a></li>
+                      <li id="list-item"><a class="dropdown-item" href="#">Share to LinkedIn</a></li>
+                      <li id="list-item"><a class="dropdown-item" href="#">Share to Reddit</a></li>
+                      <li id="list-item"><a class="dropdown-item" href="#">Share to Hacker News</a></li>
+                      <li id="list-item"><a class="dropdown-item" href="#">Share to Facebook</a></li>
+                      <li id="list-item"><a class="dropdown-item" href="#">Share Post via...</a></li>
+                      <li id="list-item"><a class="dropdown-item" href="#" >Report Abuse</a></li>
+                  </ul>
+                  <div class="list-menu-icon-container">
+  
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
   );
 };
 

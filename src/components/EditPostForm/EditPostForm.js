@@ -7,9 +7,12 @@ import TagField from "../TagField/TagField";
 import dotsIcon from "../assets/images/dotsbutton.png";
 import useDelete from "../../hooks/useDelete";
 
-const token = localStorage.getItem("token" || "");
-const payload = token.split(".")[1];
-const id = JSON.parse(atob(payload)).id;
+const token = localStorage.getItem("token");
+let id = "";
+if (token) {
+  const payload = token.split(".")[1];
+  id = JSON.parse(atob(payload)).id;
+}
 
 const EditPostForm = ({ data, postURL }) => {
   const post = data.data.post;
