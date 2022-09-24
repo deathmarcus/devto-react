@@ -46,6 +46,7 @@ const EditPostForm = ({ data, postURL }) => {
       postBody: e,
       postTimeToRead: Math.ceil(e.length / 150),
     });
+
     console.log("HQ:", {
       ...formData,
       postBody: e,
@@ -73,7 +74,6 @@ const EditPostForm = ({ data, postURL }) => {
       },
       body: JSON.stringify(data),
     });
-
     console.log("response:", response);
 
     const jsonData = await response.json();
@@ -88,17 +88,23 @@ const EditPostForm = ({ data, postURL }) => {
     }
   };
 
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    console.log("borrando");
+    // const { data, loading, error } = useDelete(url, token);
+  };
+
   return (
     <>
       <form
-        class="card col-12 col-md-9"
+        className="card col-12 col-md-9"
         id="createpost_main"
         onSubmit={handleSubmit}
       >
         <div>
           <FormInputField
             type="text"
-            class="form-control"
+            className="form-control"
             value={formData.postImage}
             placeholder="Paste here the url of your post cover"
             label="Post Cover Image"
@@ -107,7 +113,7 @@ const EditPostForm = ({ data, postURL }) => {
           />
           <FormInputField
             type="textarea"
-            class="form-control"
+            className="form-control"
             value={formData.postTitle}
             placeholder="New post title here..."
             label="Post Title"
@@ -129,26 +135,26 @@ const EditPostForm = ({ data, postURL }) => {
             onChange={handleQuill}
             defaultValue={formData.postBody}
           />
-          <div class="outside-buttons py-3">
+          <div className="outside-buttons py-3">
             <button
-              class=" btn btn-primary outside-button"
+              className=" btn btn-primary outside-button"
               id="save_btn"
               children="Publish"
               type="submit"
             />
             <button
-              class="btn btn-light outside-button"
+              className="btn btn-light outside-button"
               children="Save Draft"
             />
-            <button class="btn btn-light outside-button">
+            <button className="btn btn-light outside-button">
               <img src={dotsIcon} height="20px" />
             </button>
 
             <button
-              class="btn btn-light outside-button"
+              className="btn btn-light outside-button"
               children="Revert new changes"
             />
-            <button type="button" onClick={useDelete()}>
+            <button type="button" onClick={handleDelete}>
               Delete
             </button>
           </div>

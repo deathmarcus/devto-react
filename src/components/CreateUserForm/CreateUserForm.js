@@ -71,7 +71,7 @@ const CreateUserForm = () => {
     <form onSubmit={handleSubmit}>
       <FormInputField
         type="email"
-        class="form-control"
+        className="form-control"
         id="email"
         value={formData.userEmail}
         placeholder="name@example.com"
@@ -81,7 +81,7 @@ const CreateUserForm = () => {
       />
       <FormInputField
         type="password"
-        class="form-control"
+        className="form-control"
         value={formData.password}
         placeholder="Type your password"
         label="Password"
@@ -90,7 +90,7 @@ const CreateUserForm = () => {
       />
       <FormInputField
         type="password"
-        class="form-control"
+        className="form-control"
         value={formData.repeatedPassword}
         placeholder="Repeat your password"
         label="Repeat Password"
@@ -99,7 +99,7 @@ const CreateUserForm = () => {
       />
       <FormInputField
         type="text"
-        class="form-control"
+        className="form-control"
         value={formData.userName}
         placeholder="Your Name"
         label="Name"
@@ -108,7 +108,7 @@ const CreateUserForm = () => {
       />
       <FormInputField
         type="text"
-        class="form-control"
+        className="form-control"
         value={formData.userLastname}
         placeholder="Your Lastname"
         label="LastName"
@@ -117,14 +117,14 @@ const CreateUserForm = () => {
       />
       <FormInputField
         type="text"
-        class="form-control"
+        className="form-control"
         value={formData.userNickname}
         placeholder="Your Nickname"
         label="Nickname"
         name="userNickname"
         onChange={handleChange}
       />
-      <button type="submit" class="btn btn-primary" id="login">
+      <button type="submit" className="btn btn-primary" id="login">
         Create User
       </button>
     </form>

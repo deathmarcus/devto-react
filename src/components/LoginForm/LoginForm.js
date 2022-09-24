@@ -42,7 +42,7 @@ const LoginForm = () => {
     <form onSubmit={handleSubmit}>
       <FormInputField
         type="email"
-        class="form-control"
+        className="form-control"
         id="email"
         value={formData.userEmail}
         placeholder="name@example.com"
@@ -52,14 +52,14 @@ const LoginForm = () => {
       />
       <FormInputField
         type="password"
-        class="form-control"
+        className="form-control"
         value={formData.password}
         placeholder="Type your password"
         label="Password"
         name="password"
         onChange={handleChange}
       />
-      <button type="submit" class="btn btn-primary" id="login">
+      <button type="submit" className="btn btn-primary" id="login">
         Log In
       </button>
     </form>

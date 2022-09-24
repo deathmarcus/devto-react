@@ -6,7 +6,7 @@ function QuillEditor({ placeholder, name, value, onChange }) {
   // const [value, setValue] = useState("");
 
   return (
-    <div class="mb-3">
+    <div className="mb-3">
       {" "}
       <ReactQuill
         theme="snow"
