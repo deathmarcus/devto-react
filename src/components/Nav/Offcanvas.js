@@ -1,5 +1,19 @@
 import React from "react";
 import styles from "./Navbar.module.scss";
+import home from "../assets/icons/home.png";
+import readingList from "../assets/icons/reading_list.png";
+import listing from "../assets/icons/listing.png";
+import podcast from "../assets/icons/podcasts.png";
+import videos from "../assets/icons/videos.png";
+import tags from "../assets/icons/tags.png";
+import faq from "../assets/icons/faq.png";
+import shop from "../assets/icons/shop.png";
+import sponsors from "../assets/icons/sponsors.png";
+import aboutNew from "../assets/icons/about_new.png";
+import contact from "../assets/icons/contact.png";
+import guidesNew from "../assets/icons/guides_new.png";
+import policy from "../assets/icons/policy.png";
+import eyes from "../assets/icons/eyes.png";
 
 const Offcanvas = () => {
   return (
@@ -23,162 +37,109 @@ const Offcanvas = () => {
         </div>
         <div className={`offcanvas-body`}>
           <div>
-            <div className={`container-home`}>
+            <div className={styles.containerHome}>
               <div className={`list-group`}>
                 <ul className={`list-home`}>
                   <li>
-                    <a
-                      href="#index"
-                      style="text-decoration:none"
-                      className={styles.bi}
-                    >
-                      <img src="/assets/icons/home.png" alt="" srcset="" /> Home
-                    </a>
+                    {" "}
+                    <span>
+                      <img src={home} alt="" srcset="" />
+                    </span>
+                    <span>{`\n`}Home</span>
                   </li>
                   <li>
-                    <a
-                      href="#index"
-                      style="text-decoration:none"
-                      className="bi"
-                    >
-                      <img src="/assets/icons/reading_list.png" />
-                      ReadingList
-                    </a>
+                    {" "}
+                    <span>
+                      <img src={readingList} />
+                    </span>
+                    <span>{`\n`}ReadingList</span>
                   </li>
                   <li>
-                    <a
-                      href="#index"
-                      style="text-decoration:none"
-                      className={styles.bi}
-                    >
-                      <img src="/assets/icons/listing.png" />
-                      Listings
-                    </a>
+                    {" "}
+                    <span>
+                      <img src={listing} />
+                    </span>
+                    <span>{`\n`}Listings</span>
                   </li>
                   <li>
-                    <a
-                      href="#index"
-                      style="text-decoration:none"
-                      className={styles.bi}
-                    >
-                      <img src="/assets/icons/podcasts.png" />
-                      Podcasts
-                    </a>
+                    {" "}
+                    <span>
+                      <img src={podcast} />
+                    </span>
+                    <span>{`\n`}Podcasts</span>
                   </li>
                   <li>
-                    <a
-                      href="#index"
-                      style="text-decoration:none"
-                      className={styles.bi}
-                    >
-                      <img src="/assets/icons/videos.png" />
-                      Videos
-                    </a>
+                    {" "}
+                    <span>
+                      <img src={videos} />
+                    </span>
+                    <span>{`\n`}Videos</span>
                   </li>
                   <li>
-                    <a
-                      href="#index"
-                      style="text-decoration:none"
-                      className={styles.bi}
-                    >
-                      <img src="/assets/icons/tags.png" />
-                      Tags
-                    </a>
+                    {" "}
+                    <span>
+                      <img src={tags} />
+                    </span>
+                    <span>{`\n`}Tags</span>
                   </li>
                   <li>
-                    <a
-                      href="#index"
-                      style="text-decoration:none"
-                      className={styles.bi}
-                    >
-                      <img src="/assets/icons/faq.png" />
-                      FAQ
-                    </a>
+                    {" "}
+                    <span>
+                      <img src={faq} />
+                    </span>
+                    <span>{`\n`}FAQ</span>
                   </li>
                   <li>
-                    <a
-                      href="#index"
-                      style="text-decoration:none"
-                      className={styles.bi}
-                    >
-                      <img src="/assets/icons/shop.png" />
-                      Forem Shop
-                    </a>
+                    {" "}
+                    <span>
+                      <img src={shop} />
+                    </span>
+                    <span>{`\n`}Forem Shop</span>
                   </li>
                   <li>
-                    <a
-                      href="#index"
-                      style="text-decoration:none"
-                      className={styles.bi}
-                    >
-                      <img src="/assets/icons/sponsors.png" />
-                      Sponsors
-                    </a>
+                    {" "}
+                    <span>
+                      <img src={sponsors} />
+                    </span>
+                    <span>{`\n`}Sponsors</span>
                   </li>
                   <li>
-                    <a
-                      href="#index"
-                      style="text-decoration:none"
-                      className={styles.bi}
-                    >
-                      <img src="/assets/icons/about_new.png" />
-                      About
-                    </a>
+                    <span>
+                      <img src={aboutNew} />
+                    </span>
+                    <span>
+                      {`\n`}
+                      {`\n`}
+                      {`\n`}About
+                    </span>
                   </li>
                   <li>
-                    <a
-                      href="#index"
-                      style="text-decoration:none"
-                      className={styles.bi}
-                    >
-                      <img src="/assets/icons/contact.png" />
-                      Contact
-                    </a>
+                    {" "}
+                    <span>
+                      <img src={contact} />
+                    </span>
+                    <span>Contact</span>
                   </li>
                   <li>
-                    <a
-                      href="#index"
-                      style="text-decoration:none"
-                      className={styles.bi}
-                    >
-                      <img src="/assets/icons/guides_new.png" />
-                      Guides
-                    </a>
+                    {" "}
+                    <span>
+                      <img src={guidesNew} />
+                    </span>
+                    <span>{`\n`}Guides</span>
                   </li>
                 </ul>
               </div>
             </div>
-            <div className="container-others">
-              <ul className="list-others">
+            <div className={`container-others`}>
+              <ul className={`list-others`}>
                 <li>
                   <h5>Other</h5>
                 </li>
                 <li>
-                  <a
-                    href="#index"
-                    className={styles.bi}
-                    style="text-decoration:none"
-                  >
-                    <img src="/assets/icons/thumb_up.png"></img>Code ofConduct
-                  </a>
+                  <img src={policy}></img>Privacy Policy
                 </li>
                 <li>
-                  <a
-                    href="#index"
-                    className={styles.bi}
-                    style="text-decoration:none"
-                  >
-                    <img src="/assets/icons/policy.png"></img>Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#index"
-                    className={styles.bi}
-                    style="text-decoration:none"
-                  >
-                    <img src="/assets/icons/eyes.png"></img>Terms of Use
-                  </a>
+                  <img src={eyes}></img>Terms of Use
                 </li>
               </ul>
             </div>

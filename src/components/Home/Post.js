@@ -5,6 +5,7 @@ import CardImage from "./CardImage";
 import UserInfoCard from "./UserInfoCard";
 import CardTitle from "./CardTitle";
 import CardBottom from "./CardBottom";
+import { Link } from "react-router-dom";
 
 const Post = ({ post, showCover = false }) => {
   //   let tagsArray = posts[0].postTags.join("\n");
@@ -12,7 +13,7 @@ const Post = ({ post, showCover = false }) => {
   {
     return (
       <>
-        <a href={`./postDetail.html?postId=${post._id}`}>
+        <Link to={`./postDetail/?postId=${post._id}`}>
           <div className={`${styles.indCard} ${styles.borderCard}`}>
             <ul className={`list-group list-group-flush`}>
               {showCover && <CardImage image={post.postImage} />}
@@ -28,7 +29,7 @@ const Post = ({ post, showCover = false }) => {
               />
             </ul>
           </div>
-        </a>
+        </Link>
       </>
     );
   }

@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import Offcanvas from "./Offcanvas";
 import LogoAndSearchBar from "./LogoAndSearchBar";
 import Buttons from "./Buttons";
-import styles from "./Navbar.module.scss";
 import useFetch from "../../hooks/useFetch";
+import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const { user, setUser } = useContext(UserContext);
@@ -35,21 +35,22 @@ const Navbar = () => {
   return (
     <div>
       {loading && <div>Loading...</div>}
-      {data && (
-        <div
-          className={`container d-flex align-items-center justify-content-around`}
-        >
-          <div>
-            <LogoAndSearchBar />
-          </div>
-          {/* <div>
-        <Offcanvas />
-      </div> */}
-          <div className={`container d-flex align-items-center`}>
-            <Buttons loggedIn={loggedIn} data={data} />
-          </div>
+      <div
+        className={`container d-flex align-items-center justify-content-between`}
+      >
+        <div>
+          <LogoAndSearchBar />
         </div>
-      )}
+        <div>
+          <Offcanvas />
+        </div>
+        <div className={`container d-flex align-items-center`}>
+          <Link to={"/createPost"}>
+            <button className={styles.navButton}>Create Post</button>
+          </Link>
+          {/* <Buttons loggedIn={loggedIn} data={data} /> */}
+        </div>
+      </div>
     </div>
   );
 };

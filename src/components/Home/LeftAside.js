@@ -122,14 +122,10 @@ const LeftAside = () => {
               <h5>Other</h5>
             </li>
             <li>
-              <Link to="/">
-                <img src={policy}></img>Privacy Policy
-              </Link>
+              <img src={policy}></img>Privacy Policy
             </li>
             <li>
-              <Link to="/">
-                <img src={eyes}></img>Terms of Use
-              </Link>
+              <img src={eyes}></img>Terms of Use
             </li>
           </ul>
         </div>

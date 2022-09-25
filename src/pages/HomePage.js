@@ -9,7 +9,6 @@ import NavPills from "../components/Home/NavPills";
 const HomePage = () => {
   const url = "https://devto-challenge-backend.vercel.app/posts/";
   const { data, loading, error } = useFetch(url);
-  console.log("Aqui la data Homepage:", data);
   if (error) console.log(error);
 
   return (

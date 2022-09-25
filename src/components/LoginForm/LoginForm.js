@@ -33,7 +33,7 @@ const LoginForm = () => {
       alert("Ingresaste mal tus datos");
     } else {
       localStorage.setItem("token", jsonData.data.token);
-      setUser({ token: jsonData.data.token });
+      setUser(localStorage.getItem("token"));
       navigate("/");
     }
   };
