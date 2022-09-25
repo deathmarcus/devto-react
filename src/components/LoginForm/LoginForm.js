@@ -34,7 +34,7 @@ const LoginForm = () => {
     } else {
       localStorage.setItem("token", jsonData.data.token);
       setUser({ token: jsonData.data.token });
-      navigate("/index");
+      navigate("/");
     }
   };
 

@@ -67,7 +67,7 @@ function CreatePostForm() {
     } else {
       // Navegar
       alert("Post Succesfully created");
-      navigate("/index");
+      navigate("/");
     }
   };
 

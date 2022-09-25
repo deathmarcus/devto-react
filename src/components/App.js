@@ -7,6 +7,7 @@ import LoginPage from "../pages/LoginPage";
 import PostDetail from "../pages/PostDetail";
 import CreatePostPage from "../pages/CreatePostPage";
 import EditPostPage from "../pages/EditPostPage";
+import EditUserPage from "../pages/EditUserPage";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/postDetail" element={<PostDetail />}></Route>
         <Route path="/createPost" element={<CreatePostPage />}></Route>
         <Route path="/editPost/:postId" element={<EditPostPage />}></Route>
+        <Route path="/editUser/:id" element={<EditUserPage />}></Route>
       </Routes>
     </UserContextProvider>
   );
