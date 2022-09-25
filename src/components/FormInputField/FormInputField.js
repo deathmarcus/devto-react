@@ -12,9 +12,9 @@ const FormInputField = ({
   const inputType = type;
   if (inputType == "textarea") {
     return (
-      <div class="mb-3 row">
+      <div className="mb-3 row">
         {label && <label htmlFor="input-field">{label}</label>}
-        <div class="col-sm-10">
+        <div className="col-sm-10">
           <textarea
             value={value}
             name={name}
@@ -28,9 +28,9 @@ const FormInputField = ({
     );
   } else {
     return (
-      <div class="mb-3 row">
+      <div className="mb-3 row">
         {label && <label htmlFor="input-field">{label}</label>}
-        <div class="col-sm-10">
+        <div className="col-sm-10">
           <input
             type={type}
             value={value}

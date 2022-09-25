@@ -4,33 +4,40 @@ import { UserContext } from "../../contexts/UserContext";
 import FormInputField from "../FormInputField/FormInputField"; //PRUEBA DE COMPONENTE REUTILIZABLE
 // import FormTextInput from "../FormTextInput";
 
-function isEmailValid(email) {
-  const emailRegexp = new RegExp(
-    /^[a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1}([a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1})*[a-zA-Z0-9]@[a-zA-Z0-9][-\.]{0,1}([a-zA-Z][-\.]{0,1})*[a-zA-Z0-9]\.[a-zA-Z0-9]{1,}([\.\-]{0,1}[a-zA-Z]){0,}[a-zA-Z0-9]{0,}$/i
-  );
-  return emailRegexp.test(email);
-}
+const EditUserForm = ({ data }) => {
+  const token = localStorage.getItem("token") || "";
 
-const url = "https://devto-challenge-backend.vercel.app/users";
+  let id = "";
+  if (token != "") {
+    const payload = token.split(".")[1];
+    id = JSON.parse(atob(payload)).id;
+  }
 
-const CreateUserForm = () => {
+  function isEmailValid(email) {
+    const emailRegexp = new RegExp(
+      /^[a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1}([a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1})*[a-zA-Z0-9]@[a-zA-Z0-9][-\.]{0,1}([a-zA-Z][-\.]{0,1})*[a-zA-Z0-9]\.[a-zA-Z0-9]{1,}([\.\-]{0,1}[a-zA-Z]){0,}[a-zA-Z0-9]{0,}$/i
+    );
+    return emailRegexp.test(email);
+  }
+
+  const url = `https://devto-challenge-backend.vercel.app/users/${id}`;
+
+  let { userEmail, userName, userLastname, userNickname } = data.data;
+
   const [formData, setFormData] = useState({
-    userEmail: "",
-    password: "",
-    userName: "",
-    userLastname: "",
-    userNickname: "",
+    userEmail: userEmail,
+    userName: userName,
+    userLastname: userLastname,
+    userNickname: userNickname,
   });
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log([e.target.name], e.target.value);
   };
 
   function isEmpty(obj) {
-    console.log(Object.values(obj));
     if (Object.values(obj).includes("")) return true;
     else {
       return false;
@@ -41,9 +48,10 @@ const CreateUserForm = () => {
     e.preventDefault();
     const doFetch = async (url) => {
       const response = await fetch(url, {
-        method: "POST",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ ...formData }),
       });
@@ -55,7 +63,7 @@ const CreateUserForm = () => {
         alert(jsonData.message);
       } else {
         // Navegar
-        alert("User Succesfully created");
+        alert("User Succesfully updated");
         navigate("/login");
       }
     };
@@ -125,10 +133,10 @@ const CreateUserForm = () => {
         onChange={handleChange}
       />
       <button type="submit" className="btn btn-primary" id="login">
-        Create User
+        Update User
       </button>
     </form>
   );
 };
 
-export default CreateUserForm;
+export default EditUserForm;

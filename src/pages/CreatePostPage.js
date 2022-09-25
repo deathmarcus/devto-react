@@ -4,11 +4,11 @@ import CreatePostForm from "../components/CreatePostForm/CreatePostForm";
 
 const CreatePostPage = () => {
   return (
-    <div class="container">
-      <div class="row">
+    <div className="container">
+      <div className="row">
         <CreatePostForm />
-        <div class="col-3 d-none d-md-block" id="createpost_help">
-          <div class="pt-5">
+        <div className="col-3 d-none d-md-block" id="createpost_help">
+          <div className="pt-5">
             <h4>Writing a Great Post Title</h4>
             <ul>
               <li>
@@ -22,7 +22,7 @@ const CreatePostPage = () => {
               </li>
             </ul>
           </div>
-          <div class="pt-5">
+          <div className="pt-5">
             <h4>Editor Basics</h4>
             <ul>
               <li>

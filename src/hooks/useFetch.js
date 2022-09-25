@@ -44,8 +44,15 @@ export default function useFetch(url) {
   useEffect(() => {
     (async function () {
       try {
+        console.log(url);
+        const token = localStorage.getItem("token") || "";
+        console.log("tokenvacio:", token);
         setLoading(true);
-        const response = await axios.get(url);
+        const response = await axios.get(url, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         setData(response.data);
       } catch (err) {
         setError(err);

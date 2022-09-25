@@ -5,9 +5,9 @@ import LoginForm from "../components/LoginForm/LoginForm";
 const LoginPage = () => {
   return (
     <div className="mainWrapper">
-      <div class="container col-12">
-        <div class="row justify-content-center">
-          <div class="card justify-content-center col-8">
+      <div className="container col-12">
+        <div className="row justify-content-center">
+          <div className="card justify-content-center col-8">
             <LoginForm />
           </div>
         </div>
