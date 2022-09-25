@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
@@ -53,6 +54,22 @@ const Navbar = () => {
       </div>
     </div>
   );
+=======
+import React, { useState } from "react";
+
+const Navbar = () => {
+  const [urlUserProfile, setUrlUserProfile] = useState("");
+  const tokenNav = localStorage.getItem("token") || "";
+  if (tokenNav) {
+    const payload = tokenNav.split(".")[1];
+    const userId = JSON.parse(atob(payload)).id;
+    setUrlUserProfile(
+      `https://devto-challenge-backend.vercel.app/users/${userId}`
+    );
+  }
+
+  return <div>Navbar</div>;
+>>>>>>> f25ef48 (WIP Feat: Navbar)
 };
 
 export default Navbar;
