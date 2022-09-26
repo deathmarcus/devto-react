@@ -8,9 +8,13 @@ import dotsIcon from "../assets/images/dotsbutton.png";
 import useDelete from "../../hooks/useDelete";
 
 const EditPostForm = ({ data, postURL }) => {
-  const token = localStorage.getItem("token") || "";
-  const payload = token.split(".")[1];
-  const id = JSON.parse(atob(payload)).id;
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    const payload = token.split(".")[1];
+    const id = JSON.parse(atob(payload)).id;
+  }
+  const id = "";
   const post = data.data.post;
 
   const [formData, setFormData] = useState({
@@ -67,7 +71,7 @@ const EditPostForm = ({ data, postURL }) => {
     } else {
       // Navegar
       alert("Post Succesfully edit");
-      navigate("/index");
+      navigate("/");
     }
   };
 
@@ -91,7 +95,7 @@ const EditPostForm = ({ data, postURL }) => {
       console.log("Delete Exitoso");
       // Navegar
       alert("Post Succesfully Deleted");
-      navigate("/index");
+      navigate("/");
     }
   };
 
