@@ -3,14 +3,14 @@ import RightAsideDetail from "../components/RightAsideDetail";
 //import LeftAsideDetail from "../components/LeftAsideDetail";
 import { useParams } from "react-router-dom";
 import LikeToggle from "../components/LikeToggle/LikeToggle";
-import useFetch from "../hooks/useFetch";
+import useFetchLike from "../hooks/useFetchLike";
 
 const PostDetail = () => {
   const params = useParams();
 
   //comento para pasarlo al toogle
   const url = `http://localhost:8080/likes/${params.postId}`;
-  const { data, loading, error } = useFetch(url);
+  const { data, loading, error } = useFetchLike(url);
 
   console.log(data?.data?.postLikeInfo?.userExistInDocument);
 
