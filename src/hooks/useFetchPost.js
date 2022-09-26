@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function useFetch(url) {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+export default function useFetchPost(url) {
+  const [postData, setPostData] = useState(null);
+  const [postError, setPostError] = useState(null);
+  const [postLoading, setPostLoading] = useState(false);
 
   useEffect(() => {
     (async function () {
       try {
         const token = localStorage.getItem("token") || "";
-        setLoading(true);
+        setPostLoading(true);
         const response = await axios.get(url, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        setData(response.data);
+        setPostData(response.data);
       } catch (err) {
-        setError(err);
+        setPostError(err);
       } finally {
-        setLoading(false);
+        setPostLoading(false);
       }
     })();
   }, [url]);
 
-  return { data, error, loading };
+  return { postData, postError, postLoading };
 }

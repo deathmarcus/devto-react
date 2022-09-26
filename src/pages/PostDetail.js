@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import LikeToggle from "../components/LikeToggle/LikeToggle";
 import useFetchLike from "../hooks/useFetchLike";
 import PostDetailCard from "../components/PostDetailCard/PostDetailCard";
+import useFetchPost from "../hooks/useFetchPost";
 
 const PostDetail = () => {
   const params = useParams();
@@ -13,7 +14,7 @@ const PostDetail = () => {
   const url = `https://devto-challenge-backend.vercel.app/likes/${params.postId}`;
   const postUrl = `https://devto-challenge-backend.vercel.app/posts/${params.postId}`;
   const { data, loading, error } = useFetchLike(url);
-  console.log(data?.data?.postLikeInfo?.userExistInDocument);
+  const { postData, postLoading, postError } = useFetchPost(postUrl);
 
   return (
     <div>
@@ -26,7 +27,8 @@ const PostDetail = () => {
           />
         )}
       </div>
-      <PostDetailCard></PostDetailCard>
+      {postLoading && <div>Loading...</div>}
+      {postData && <PostDetailCard postData={postData} />}
     </div>
   );
 };

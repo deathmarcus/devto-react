@@ -9,7 +9,6 @@ export default function useFetch(url) {
   useEffect(() => {
     (async function () {
       try {
-        console.log("HACIENDO FETCH LIKE");
         const token = localStorage.getItem("token") || "";
         const payload = token.split(".")[1];
         const userId = JSON.parse(atob(payload)).id;
