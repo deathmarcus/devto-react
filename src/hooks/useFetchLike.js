@@ -10,12 +10,14 @@ export default function useFetch(url) {
     (async function () {
       try {
         const token = localStorage.getItem("token") || "";
+        const payload = token.split(".")[1];
+        const userId = JSON.parse(atob(payload)).id;
         setLoading(true);
-        const response = await axios.get(url, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        let headers = {
+          Authorization: `Bearer ${token}`,
+          userId: `${userId}`,
+        };
+        const response = await axios.get(url, { headers });
         setData(response.data);
       } catch (err) {
         setError(err);
