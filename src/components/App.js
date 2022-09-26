@@ -16,9 +16,9 @@ const App = () => {
     <div>
       <UserContextProvider>
         <header>
-          {/* <nav>
+          <nav>
             <Nav />
-          </nav> */}
+          </nav>
         </header>
         <>
           <Routes>
