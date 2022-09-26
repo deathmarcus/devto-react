@@ -13,7 +13,7 @@ const Post = ({ post, showCover = false }) => {
   {
     return (
       <>
-        <Link to={`./postDetail/?postId=${post._id}`}>
+        <Link to={`./postDetail/${post._id}`}>
           <div className={`${styles.indCard} ${styles.borderCard}`}>
             <ul className={`list-group list-group-flush`}>
               {showCover && <CardImage image={post.postImage} />}

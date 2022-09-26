@@ -32,8 +32,26 @@ const LoginForm = () => {
     if (!jsonData.success) {
       alert("Ingresaste mal tus datos");
     } else {
+      const temp = jsonData.data.token.split(".")[1];
+      const userId = JSON.parse(atob(temp)).id;
+
+      const response = await fetch(
+        `https://devto-challenge-backend.vercel.app/users/${userId}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${jsonData.data.token}`,
+          },
+        }
+      );
+      const userData = await response.json();
       localStorage.setItem("token", jsonData.data.token);
-      setUser({ token: jsonData.data.token });
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ ...userData.data, userId })
+      );
+      setUser({ token: jsonData.data.token, ...userData.data, userId });
       navigate("/");
     }
   };
@@ -67,4 +85,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-

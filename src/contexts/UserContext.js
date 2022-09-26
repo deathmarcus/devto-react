@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
 export const UserContext = React.createContext();
 
@@ -8,6 +8,17 @@ const UserContextProvider = ({ children }) => {
   const login = () => {};
   const logut = () => {};
 
+  useEffect(() => {
+    const localStorageUser = localStorage.getItem("user");
+    const localStorageToken = localStorage.getItem("token");
+    console.log(JSON.parse(localStorageUser));
+    if (localStorageUser)
+      setUser({
+        token: localStorageToken,
+        user: JSON.parse(localStorageUser),
+      });
+  }, []);
+
   return (
     <UserContext.Provider value={{ user, setUser }}>
       {children}
@@ -16,3 +27,5 @@ const UserContextProvider = ({ children }) => {
 };
 
 export default UserContextProvider;
+
+export const useUser = () => useContext(UserContext);
