@@ -1,0 +1,28 @@
+import React, { useEffect } from "react";
+import useLike from "../../hooks/useLike";
+
+function LikeInput({ isChecked, onChange, img }) {
+  const { data, loading, error } = useLike();
+
+  return (
+    <div>
+      <input
+        type="checkbox"
+        id="heartCheckbox"
+        className="d-none"
+        checked={isChecked}
+        onChange={onChange}
+        label="heartCheckbox"
+      />
+      <label
+        htmlFor="heartCheckbox"
+        className="heartCheckbox"
+        alt="heartCheckbox"
+      >
+        <img src={img} alt="heartCheckbox"></img>
+      </label>
+    </div>
+  );
+}
+
+export default LikeInput;

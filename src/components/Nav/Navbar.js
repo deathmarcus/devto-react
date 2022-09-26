@@ -19,12 +19,10 @@ const Navbar = () => {
   };
 
   const { data, loading, error } = useFetch(url);
-  console.log("Aqui la data:", data);
-  if (error) console.log(error);
 
   useEffect(() => {
     setLoggedIn(localStorage.getItem("token"));
-    console.log("Logged in", loggedIn);
+
     if (loggedIn) {
       const payload = loggedIn.split(".")[1];
       const userId = JSON.parse(atob(payload)).id;

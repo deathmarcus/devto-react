@@ -16,15 +16,15 @@ const App = () => {
     <div>
       <UserContextProvider>
         <header>
-          <nav>
+          {/* <nav>
             <Nav />
-          </nav>
+          </nav> */}
         </header>
         <>
           <Routes>
             <Route path="/login" element={<LoginPage />}></Route>
             <Route path="/createUser" element={<CreateUserPage />}></Route>
-            <Route path="/postDetail" element={<PostDetail />}></Route>
+            <Route path="/postDetail/:postId" element={<PostDetail />}></Route>
             <Route path="/createPost" element={<CreatePostPage />}></Route>
             <Route path="/editPost/:postId" element={<EditPostPage />}></Route>
             <Route path="/editUser/:id" element={<EditUserPage />}></Route>
