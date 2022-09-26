@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 function LikeToggle({ onClick, userExistInDocument }) {
-  const [userLikes, setUserLikes] = useState(false);
+  const [userLikes, setUserLikes] = useState(userExistInDocument);
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -72,7 +72,7 @@ function LikeToggle({ onClick, userExistInDocument }) {
 
   return (
     <div>
-      {userExistInDocument === true ? (
+      {userLikes === true ? (
         <button type="button" onClick={handleOnUnLike} children="LIKE">
           <img src={checkedheart} />
         </button>

@@ -4,14 +4,15 @@ import RightAsideDetail from "../components/RightAsideDetail";
 import { useParams } from "react-router-dom";
 import LikeToggle from "../components/LikeToggle/LikeToggle";
 import useFetchLike from "../hooks/useFetchLike";
+import PostDetailCard from "../components/PostDetailCard/PostDetailCard";
 
 const PostDetail = () => {
   const params = useParams();
 
   //comento para pasarlo al toogle
-  const url = `http://localhost:8080/likes/${params.postId}`;
+  const url = `https://devto-challenge-backend.vercel.app/likes/${params.postId}`;
+  const postUrl = `https://devto-challenge-backend.vercel.app/posts/${params.postId}`;
   const { data, loading, error } = useFetchLike(url);
-
   console.log(data?.data?.postLikeInfo?.userExistInDocument);
 
   return (
@@ -25,6 +26,7 @@ const PostDetail = () => {
           />
         )}
       </div>
+      <PostDetailCard></PostDetailCard>
     </div>
   );
 };
