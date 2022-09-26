@@ -4,7 +4,7 @@ import checkedheart from "../../components/assets/images/heartcheked.png";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-function LikeToggle({ onClick }) {
+function LikeToggle({ onClick, userExistInDocument }) {
   const [userLikes, setUserLikes] = useState(false);
 
   const [data, setData] = useState(null);
@@ -72,7 +72,7 @@ function LikeToggle({ onClick }) {
 
   return (
     <div>
-      {userLikes === true ? (
+      {userExistInDocument === true ? (
         <button type="button" onClick={handleOnUnLike} children="LIKE">
           <img src={checkedheart} />
         </button>
@@ -81,7 +81,6 @@ function LikeToggle({ onClick }) {
           <img src={unchekedheart} />
         </button>
       )}
-      ;
     </div>
   );
 }
