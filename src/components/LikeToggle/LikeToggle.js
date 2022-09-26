@@ -11,10 +11,12 @@ function LikeToggle({ onClick, userExistInDocument }) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const params = useParams();
-  const token = localStorage.getItem("token") || "";
-
-  const payload = token.split(".")[1];
-  const userId = JSON.parse(atob(payload)).id;
+  const token = localStorage.getItem("token");
+  let userId = "";
+  if (token) {
+    const payload = token.split(".")[1];
+    userId = JSON.parse(atob(payload)).id;
+  }
 
   const postId = params.postId;
 

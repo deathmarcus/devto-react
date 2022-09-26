@@ -9,9 +9,12 @@ export default function useFetch(url) {
   useEffect(() => {
     (async function () {
       try {
-        const token = localStorage.getItem("token") || "";
-        const payload = token.split(".")[1];
-        const userId = JSON.parse(atob(payload)).id;
+        const token = localStorage.getItem("token");
+        let userId = "";
+        if (token) {
+          const payload = token.split(".")[1];
+          userId = JSON.parse(atob(payload)).id;
+        }
         setLoading(true);
         let headers = {
           Authorization: `Bearer ${token}`,
