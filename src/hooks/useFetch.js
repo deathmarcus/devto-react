@@ -44,7 +44,7 @@ export default function useFetch(url) {
   useEffect(() => {
     (async function () {
       try {
-        console.log(url);
+        // console.log(url);
         const token = localStorage.getItem("token") || "";
         console.log("tokenvacio:", token);
         setLoading(true);
