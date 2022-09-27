@@ -51,7 +51,10 @@ const LoginForm = () => {
         "user",
         JSON.stringify({ ...userData.data, userId })
       );
-      setUser({ token: jsonData.data.token, ...userData.data, userId });
+      setUser({
+        token: jsonData.data.token,
+        user: { ...userData.data, userId },
+      });
       navigate("/");
     }
   };

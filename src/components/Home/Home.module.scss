@@ -23,6 +23,7 @@
     color: #000000;
   }
 }
+
 .navLink {
   & button {
     color: #000000;
@@ -236,12 +237,14 @@ body {
 }
 
 .rP1Card {
+  font-family: "Segoe UI Bold";
   background-color: #fafafa;
   border: none;
   margin-bottom: 10px;
 }
 
 .rP1CardText {
+  font-family: "Segoe UI Regular";
   line-height: 1.5;
   font-style: normal;
   letter-spacing: 0.5px;
