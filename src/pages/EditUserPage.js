@@ -9,8 +9,6 @@ const EditUserPage = () => {
   const url = `https://devto-challenge-backend.vercel.app/users/${params.id}`;
   const { data, loading, error } = useFetch(url);
 
-  if (error) console.log(error);
-
   return (
     <div>
       {loading && <div>Loading...</div>}

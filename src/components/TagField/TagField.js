@@ -19,8 +19,6 @@ const settings = {
 };
 
 function TagField({ label, name, onChange, value, defaultValue = [] }) {
-  //   console.log("label:", label, "name:", name, "value:", value);
-
   return (
     <div className="form-group mb-3">
       <label htmlFor={"field-" + name}>{label}</label>

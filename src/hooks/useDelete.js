@@ -4,8 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const useDelete = async (postURL, token) => {
   const navigate = useNavigate();
-  console.log("ejecutando delete");
-  console.log("Delete en camino");
+
   const response = await fetch(postURL, {
     method: "DELETE",
     headers: {

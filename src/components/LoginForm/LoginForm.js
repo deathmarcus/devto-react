@@ -17,7 +17,6 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("solicitud:", JSON.stringify({ ...formData }));
 
     const response = await fetch(
       "https://devto-challenge-backend.vercel.app/auth",

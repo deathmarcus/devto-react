@@ -9,7 +9,12 @@ export default function useFetchPost(url) {
   useEffect(() => {
     (async function () {
       try {
-        const token = localStorage.getItem("token") || "";
+        const token = localStorage.getItem("token");
+        let userId = "";
+        if (token) {
+          const payload = token.split(".")[1];
+          userId = JSON.parse(atob(payload)).id;
+        }
         setPostLoading(true);
         const response = await axios.get(url, {
           headers: {

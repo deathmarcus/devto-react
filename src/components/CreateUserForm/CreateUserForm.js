@@ -26,11 +26,9 @@ const CreateUserForm = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log([e.target.name], e.target.value);
   };
 
   function isEmpty(obj) {
-    console.log(Object.values(obj));
     if (Object.values(obj).includes("")) return true;
     else {
       return false;

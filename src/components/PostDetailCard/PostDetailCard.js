@@ -6,7 +6,6 @@ function PostDetailCard({ postData }) {
   let { postAuthor, postBody, postImage, postTitle } = postData.data.post;
   let postId = postData.data.post._id;
 
-  console.log(postId);
   return (
     <div className="card ">
       <img src={postImage} className="img-top " alt="POSTIMAGE" />
