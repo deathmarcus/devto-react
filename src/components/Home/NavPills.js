@@ -7,7 +7,7 @@ const NavPills = () => {
       <ul className={`nav ${styles.navPills}`} id="pills-tab" role="tablist">
         <li className={`nav-tabs`} role="presentation">
           <a
-            className={`nav-link`}
+            className={styles.navLink}
             href="#relevant-content"
             id="pills-relevant-tab"
             data-bs-toggle="pill"
@@ -22,7 +22,7 @@ const NavPills = () => {
         </li>
         <li className={`nav-item`} role="presentation">
           <button
-            className={`nav-link`}
+            className={styles.navLink}
             id="pills-latest-tab"
             data-bs-toggle="pill"
             data-bs-target="#pills-latest"
@@ -36,7 +36,7 @@ const NavPills = () => {
         </li>
         <li className={`nav-item`} role="presentation">
           <button
-            className={`nav-link`}
+            className={styles.navLink}
             id="pills-top-tab"
             data-bs-toggle="pill"
             data-bs-target="#pills-top"
