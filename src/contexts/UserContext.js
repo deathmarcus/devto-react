@@ -11,7 +11,7 @@ const UserContextProvider = ({ children }) => {
   useEffect(() => {
     const localStorageUser = localStorage.getItem("user");
     const localStorageToken = localStorage.getItem("token");
-    console.log(JSON.parse(localStorageUser));
+
     if (localStorageUser)
       setUser({
         token: localStorageToken,

@@ -51,7 +51,7 @@ function LikeToggle({ onClick, userExistInDocument }) {
 
   const handleOnUnLike = () => {
     setUserLikes(!userLikes);
-    console.log("YA NO ME GUSTA");
+
     (async function () {
       try {
         setLoading(true);

@@ -20,18 +20,11 @@ const RightAsideDetail = () => {
       )
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
-
           const userName = data.data.userName;
           const userLastName = data.data.userLastname;
           const userProfilePicture = data.data.userProfilePic;
-          console.log(userName);
-          console.log(userLastName);
-          console.log(userProfilePicture);
         });
     }
-
-    console.log(postAuthorId);
   }, [data]);
 
   const getData = () => {};

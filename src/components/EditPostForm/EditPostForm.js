@@ -49,12 +49,11 @@ const EditPostForm = ({ data, postURL }) => {
   const handleTagify = (e) => {
     const tags = e.detail.tagify.value.map((item) => item.value);
     setTagList({ ...tagList, postTags: tags });
-    console.log("HT:", { ...tagList, postTags: tags });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submit en camino");
+
     const data = { ...formData, ...tagList };
     const response = await fetch(postURL, {
       method: "PATCH",
@@ -77,7 +76,6 @@ const EditPostForm = ({ data, postURL }) => {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    console.log("Delete en camino");
 
     const response = await fetch(postURL, {
       method: "DELETE",
@@ -86,13 +84,12 @@ const EditPostForm = ({ data, postURL }) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log("response:", response);
+
     const jsonData = await response.json();
     // No fue exitoso, no estas autorizado
     if (!jsonData.success) {
       alert(jsonData.error);
     } else {
-      console.log("Delete Exitoso");
       // Navegar
       alert("Post Succesfully Deleted");
       navigate("/");

@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 const UserInfoCard = ({ author, date, authorId }) => {
   const url = `https://devto-challenge-backend.vercel.app/users/${authorId}`;
   // const { data, loading, error } = useFetch(url);
-  // if (error) console.log(error);
+
   return (
     <div>
       {/* {data && (
