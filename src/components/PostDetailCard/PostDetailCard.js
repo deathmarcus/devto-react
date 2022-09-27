@@ -36,7 +36,7 @@ function PostDetailCard({ postData }) {
       </div>
       <div className="card-text">
         <p>{postBody}</p>
-        <a href="postid">
+        <a href="/editPost/:postId">
           <button
             type="button"
             className="btn btn-outline-primary ${editOwner}"
